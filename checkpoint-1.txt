@@ -1,0 +1,75 @@
+1) What data types do each of these values represent?
+
+"A Clockwork Orange" = String
+42 = integer
+09/02/1945 = DATE
+98.7 = float
+$15.99 = Money
+
+2)Explain in your own words when a database might be used. Explain when a text file might be used.
+
+We use Database for create  and  help us to manage big data.
+With a data base the data to persist beyond the end of the program.
+
+A File is good if there is no need to regularly change the data
+
+3)Describe one difference between SQL and other programming languages.
+
+SQL help to work with database, manage it and change it  -  and for example Rails is creating an application who will use SQL for access to a database
+
+4)In your own words, explain how the pieces of a database system fit together at a high level.
+
+The server is asking a request to the datafile. Then the interface will provide the data requested
+
+5)Explain the meaning of table, row, column, and value.
+
+a table is the Database. It has a specific name ('From')
+a row is the line of the Database where are the data (where)
+a column named each data for helping us to find it, its what the data represent('Select')
+value is the data of our database, piece of information that the column names describe (where)
+
+6) List 3 data types that can be used in a table.
+
+- integer
+- float
+- String
+
+
+7) Given this payments table, provide an English description of the following queries and include their results:
+
+     SELECT date, amount
+     FROM payments;
+
+We are asking to print from our database "Payments" all the rows but only the date and amount columns
+
+     SELECT amount
+     FROM payments
+     WHERE amount > 500;
+
+  We want to print from our database " Payment" the amount column and only the row when the amount is higher of 500
+
+     SELECT *
+     FROM payments
+     WHERE payee = 'Mega Foods';
+
+We are selecting all the column of the row where payee == 'Mega Foods'
+
+8) Given this users table, write SQL queries using the following criteria and include the output:
+
+    The email and sign-up date for the user named DeAndre Data.
+
+    SELECT email, sign-up
+    FROM users
+    WHERE name = 'DeAndre Data';
+
+    The user ID for the user with email 'aleesia.algorithm@uw.edu'.
+
+    Select userid
+    FROM users
+    WHERE email = 'aleesia.algorithm@uw.edu';
+
+    All the columns for the user ID equal to 4.
+
+    Select *
+    FROM users
+    WHERE userid = 4

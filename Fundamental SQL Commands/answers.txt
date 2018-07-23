@@ -1,0 +1,180 @@
+1- list the commands for adding, updating, and deleting data
+
+  adding : INSERT INTO
+    INSERT INTO table (column1, column2)
+    VALUES
+    (value1, value2);
+
+-----------------------
+  Delete : DELETE
+    DELETE FROM table WHERE ID = 1121
+
+-----------------------
+
+  Updating : UPDATE
+    UPDATE table SET name = value1 WHERE id = 1111;
+
+
+
+2 - Explain the structure for each type of command.
+
+CREATE TABLE products (
+    id integer,
+    name text,
+    price numeric(5, 2)
+);
+
+Here we are creating a table name products
+this table will include 3 column ID, name, price
+The ID will be integer
+the name is a text
+and price has 2 argument. the number 5 is the number maximal of digit we can use and 2 will be the number of decimal we have. For example the maximal number we can use is 999.99
+
+-----------------------
+
+INSERT INTO products (id, name, price)
+ VALUES
+ (value1, value2, value3)
+
+Here we will INSERT values to our table product. We remind the 3 columns we are using (ID, name, price)
+then we start to add with the word VALUE
+
+-----------------------
+
+UPDATE products SET price=159.99 WHERE id=11773;
+
+Here we specify that we want to update our database products by using the word update
+then SET mean we explain what will be the new price and with WHERE we explain what product will be impact.
+
+-----------------------
+
+DELETE FROM products WHERE id> 11774 AND price < 100;
+We start with DELETE for explain we will delete something
+the we select the database with FROM
+and WHERE is selecting what we want to DELETE
+
+
+3 -What are some the data types that can be used in tables? Give a real world example of each.
+
+  Money: When we want to use price for example.
+  ID: for find our product and sort him
+  Date: we can use it for set the date of the registration
+
+4- Create a wedding table
+
+   -  First and last name : Text
+      Whether they sent in their RSVP : Text
+      Number of guests :numeric
+      Number of meals: numeric
+
+-----------------------
+
+  - CREATE TABLE wedding (
+    FirstName text,
+    LastName text,
+    RSVP text,
+    NumberofGuests: numeric(1)
+    Meal numeric(2,1)
+    );
+
+-----------------------
+ - ALTER TABLE wedding ADD COLUMN ThankYou text SET DEFAULT 'None';
+
+ -----------------------
+
+ - ALTER TABLE wedding DROP COLUMN Meal;
+
+ -----------------------
+
+ - ALTER TABLE wedding ADD COLUMN Table numeric(2);
+
+ -----------------------
+
+ - DROP TABLE wedding;
+
+
+5- create a library tables
+
+CREATE TABLE library(
+ISBN integer,
+title text,
+author text,
+genre text,
+publishing date,
+numberofcopies numeric,
+availablecopies numeric,
+);
+
+-----------------------
+
+INSERT INTO library (ISBN, title, author, genre, publishing, numberofcopies, availablecopies)
+9788373191723, 'The Fellowship of the Ring', 'J. R. R. Tolkien', 'Fantasy', 1954-07-29, 5, 5)
+9788684237608, 'The Two Towers', 'J. R. R. Tolkien', 'Fantasy', 1954-11-11, 5, 5)
+9780261102941, 'The Return of the King', 'J. R. R. Tolkien', 'Fantasy', 1955-10-20, 5, 5);
+
+-----------------------
+
+UPDATE library SET availablecopies= 4 WHERE ISBN=9788373191723;
+
+-----------------------
+
+DELETE FROM library WHERE ISBN=9780261102941;
+
+6- Create a spacecrafts table
+
+CREATE TABLE spacecrafts (
+id integer,
+name text,
+YearLaunched numeric,
+CountryofOrigin text,
+description text,
+orbitingBody text
+operating text,
+miles numeric,
+);
+
+-----------------------
+
+INSERT INTO spacecrafts (id, name, YearLaunched, CountryofOrigin, description, orbitingBody, operating, miles)
+VALUES
+(24, 'Artemis', 2011, 'USA', 'studying the effect of the solar wind on the Moon','' Moon', 'Yes', 10000)
+(25,'2001 Mars Odyssey', 2001, 'USA', 'his mission is to map the surface of Mars and also acts as a relay for the Curiosity and Opportunity rovers', 'Mars', 'Yes', 30000)
+(26,'Akatsuki', 2010, 'Japan','' Map Venus', 'Venus', 'Yes', 40000);
+
+-----------------------
+
+DELETE FROM spacecrafts WHERE id=26;
+
+-----------------------
+
+UPDATE spacecrafts SET operating= false WHERE id=25;
+
+7- Create a table to hold emails
+
+CREATE TABLE email (
+id integer,
+subjet text,
+sender VARCHAR(320),
+OtherRecipients VARCHAR(320),
+Body text
+timestamp date,
+read text,
+IdChain integer,
+);
+
+-----------------------
+
+INSERT INTO email (id, subjet, sender, OtherRecipients, Body, timestamp, read, IdChain)
+VALUES
+(1, 'bloc', 'paul@paul.com', 'none', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',  2018-07-29, Yes, 25)
+(2, 'Interview', 'lou@lou.com', 'none', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',  2018-01-01, Yes, 45)
+(3, 'Bill', 'paul@paul.com', 'none', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',  2018-02-25, no, 28)
+
+
+-----------------------
+
+DELETE FROM email WHERE subjet= 'Bill';
+
+-----------------------
+
+UPDATE email SET read= 'no' WHERE subjet= 'Interview'
